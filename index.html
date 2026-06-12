@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PENGUMUMAN RASMI | SURAHANJAYA 67</title>
+    <style>
+        :root {
+            --primary-color: #ff3333;
+            --bg-color: #0d0d0d;
+            --text-color: #ffffff;
+            --card-bg: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 30px;
+            background: var(--card-bg);
+            border: 3px solid var(--primary-color);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 51, 51, 0.3);
+            margin: 20px;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(255, 51, 51, 0.2); }
+            100% { box-shadow: 0 0 40px rgba(255, 51, 51, 0.6); }
+        }
+
+        .warning-icon {
+            font-size: 80px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .alert-box {
+            background: rgba(255, 51, 51, 0.1);
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .main-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #ffcc00;
+            font-size: 1.8rem;
+            display: block;
+            margin-top: 10px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+        }
+
+        .fine {
+            color: #ff3333;
+            font-size: 2rem;
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        .ticker-container {
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* 恶搞互动按钮 */
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="warning-icon">⚠️</div>
+        <h1>NOTIS AMARAN KERAS</h1>
+        <p style="color: #aaa; font-weight: bold;">JABATAN KESELAMATAN SIBER & MORAL 67</p>
+        
+        <div class="alert-box">
+            <p class="main-text">
+                Sila ambil perhatian serius: <br>
+                <span class="highlight">Melakukan 67 adalah DILARANG!</span>
+            </p>
+            <p class="main-text">
+                Jika ditangkap, anda akan didenda sebanyak: <br>
+                <span class="fine">RM 670,000</span>
+            </p>
+        </div>
+
+        <button class="btn" onclick="akuMengaku()">Saya Faham & Saya Takkan Buat</button>
+
+        <div class="ticker-container">
+            <strong>Kes Terkini:</strong> <span id="ticker">Memuatkan data tangkapan...</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Kementerian 67 Antarabangsa. Hak Cipta Terpelihara.
+    </div>
+
+    <script>
+        // 随机滚动被捕名单，增加真实（搞笑）感
+        const names = ["Ali_Kacak99", "AhBeng_666", "Muthu_Kapal", "User_Tertangkap", "Member_Korang", "Sia_Lao_Sai"];
+        const locations = ["Kuala Lumpur", "Penang", "Johor Bahru", "Kuching", "Bilik Tidur", "Dapur Ibu"];
+
+        function updateTicker() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomLoc = locations[Math.floor(Math.random() * locations.length)];
+            const randomTime = Math.floor(Math.random() * 55) + 5;
+            
+            document.getElementById('ticker').innerText = `${randomName} baru sahaja ditangkap di ${randomLoc} ${randomTime} minit lepas. Denda RM670,000 diproses!`;
+        }
+
+        setInterval(updateTicker, 4000);
+        updateTicker();
+
+        // 点击按钮的恶搞弹窗
+        function akuMengaku() {
+            alert("Terima kasih atas pengakuan anda. Kamera depan anda telah diaktifkan untuk pemantauan 67.");
+            alert("Bertenang, ini cuma prank! Hantar link ini kepada kawan anda yang suka buat 67! 🤣🤣");
+        }
+    </script>
+
+</body>
+</html>
